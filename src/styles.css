@@ -1,0 +1,25 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';*
+body {
+    background: url('./picture/cats.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.container {
+    padding: 15px;
+    max-width: 428px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(225, 237, 232);
+        font-size: 20px;
+}
+
+.cat-info {
+margin-top: 50px;
+color: rgb(225, 237, 232);
+font-size: 20px;
+}
+
+   .hidden {
+       display: none;
+   }
