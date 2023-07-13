@@ -42,7 +42,6 @@ function markupBreeds(breeds) {
   select.innerHTML = markup;
   select.classList.remove('hidden');
     loader.classList.add('hidden');
-    error.classList.add('hidden');
     }
 
 select.addEventListener('change', onselectCat);
@@ -61,7 +60,6 @@ function markupCat(cat) {
       });
     divCatInfo.innerHTML = markup;
     divCatInfo.classList.remove('hidden');
-    error.classList.add('hidden');
     loader.classList.add('hidden');
     }
 
@@ -79,8 +77,6 @@ function onselectCat(event) {
         'Oops! Something went wrong! Try reloading the page!'
       );
     });
-    select.classList.remove('hidden');
-    loader.classList.add('hidden');
   };
 
 
