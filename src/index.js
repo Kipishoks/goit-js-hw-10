@@ -55,7 +55,7 @@ function markupCat(cat) {
     <img class="cat-image" src="${cat.url}" width="400" alt="cat">
      <h2>${cat.breeds[0].name}</h2>
     <p>${cat.breeds[0].description}</p>
-    <p>>${cat.breeds[0].temperament}</p>
+    <p>${cat.breeds[0].temperament}</p>
     `
       });
     divCatInfo.innerHTML = markup;
