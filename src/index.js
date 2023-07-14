@@ -1,5 +1,4 @@
 import './styles.css';
-import axios from "axios";
 import SlimSelect from 'slim-select';
 import '../node_modules/slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
@@ -9,22 +8,21 @@ const select = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
 const divCatInfo = document.querySelector('.cat-info');
 const error = document.querySelector('.error');
- 
-loader.classList.add('hidden');
+
 error.classList.add('hidden');
 
 fetchBreeds()
     .then(breeds => {
-         loader.classList.remove('hidden');
-      markupBreeds(breeds);
-      new SlimSelect({
+        loader.classList.remove('hidden');
+        markupBreeds(breeds);
+         new SlimSelect({
         select: select,
       });
          loader.classList.add('hidden');
     })
     .catch(error => {
       console.log(error);
-      loader.classList.add('hidden');
+    //   loader.classList.add('hidden');
       Notiflix.Notify.failure(
         'Oops! Something went wrong! Try reloading the page!'
       );
@@ -32,8 +30,8 @@ fetchBreeds()
 
 
 function markupBreeds(breeds) {
-    divCatInfo.classList.add('hidden');
     loader.classList.remove('hidden');
+    divCatInfo.classList.add('hidden');
     const markup = breeds
     .map(breed => {
       return `<option value="${breed.id}">${breed.name}</option>`;
@@ -41,10 +39,10 @@ function markupBreeds(breeds) {
     .join('');
   select.innerHTML = markup;
   select.classList.remove('hidden');
-    loader.classList.add('hidden');
+    // loader.classList.add('hidden');
     }
 
-select.addEventListener('change', onselectCat);
+    select.addEventListener('change', onselectCat);
 
 // блоці div.cat-info з'являється зображення і розгорнута
 //  інформація про кота: назва породи, опис і темперамент.
@@ -78,6 +76,3 @@ function onselectCat(event) {
       );
     });
   };
-
-
-
